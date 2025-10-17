@@ -45,8 +45,8 @@ async function checkForJenkinsfile(repo) {
         return false;
     }
 }
-async function main() {
-    console.log('Scanning gdcorp-crm .NET repositories for Jenkinsfiles...');
+
+module.exports = async function main() {
     const repos = await getDotnetRepos();
     const foundRepos = [];
     for (const repo of repos) {
@@ -54,13 +54,5 @@ async function main() {
             foundRepos.push(repo.name);
         }
     }
-    console.log('Repositories containing a Jenkinsfile:');
-    for (const name of foundRepos) {
-        console.log(`${name}`);
-    }
-}
-
-main().catch(error => {
-    console.error('Error in script:', error);
-    process.exit(1);
-});
+    return foundRepos;
+};
