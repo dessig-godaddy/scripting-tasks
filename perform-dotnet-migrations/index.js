@@ -24,13 +24,13 @@ async function main() {
             console.log(`Cloning ${repo} into temporary directory...`);
             execSync(`git clone ${repoUrl} ${tempDir}`, { stdio: 'inherit' });
             process.chdir(tempDir);
-            if (!dryRun) execSync(`git checkout -b migrate-workflows`, { stdio: 'inherit' });
+            if (!dryRun) execSync(`git checkout -b CRM-32090`, { stdio: 'inherit' });
             console.log(`Running migrate-dotnet-workflows on ${repo}...`);
             execSync(`migrate-dotnet-workflows ${dryRun ? '--dry-run' : ''}`, { stdio: 'inherit' });
             if (!dryRun) {
                 execSync(`git add .`, { stdio: 'inherit' });
                 execSync(`git commit -m "Migrate .NET workflows to GHA"`, { stdio: 'inherit' });
-                execSync(`git push --set-upstream origin migrate-workflows`, { stdio: 'inherit' });
+                execSync(`git push --set-upstream origin CRM-32090`, { stdio: 'inherit' });
             }
             console.log(`Migration for ${repo} completed. Please review changes and commit as needed.`);
         } catch (error) {
