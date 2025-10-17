@@ -1,4 +1,4 @@
-// list all gdcorp-crm repos ending in -dotnet for Jenkinsfiles
+// list all gdcorp-crm repos ending in -dotnet containing Jenkinsfiles
 
 var { Octokit } = require('octokit');
 var dotenv = require('dotenv');
