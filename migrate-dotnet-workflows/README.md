@@ -42,7 +42,7 @@ Options:
   -h, --help                Show help
 ```
 
-Run the command from the root of the repository you wish to migrate.
+Check out a branch and run the command from the root of the repository you wish to migrate. You can then review and commit changes for PR manually.
 
 ## Example
 
