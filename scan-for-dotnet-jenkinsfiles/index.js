@@ -56,7 +56,7 @@ async function main() {
     }
     console.log('Repositories containing a Jenkinsfile:');
     for (const name of foundRepos) {
-        console.log(`- ${name}`);
+        console.log(`${name}`);
     }
 }
 
