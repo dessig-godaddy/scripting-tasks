@@ -8,6 +8,7 @@ const { execSync } = require('child_process');
 const getRepos = require('../scan-for-dotnet-jenkinsfiles/index.js');
 const args = process.argv.slice(2);
 const dryRun = !args.includes('--apply');
+const performOnce = args.includes('--once'); // for testing, only do one repo
 
 async function main() {
     console.log(dryRun
@@ -39,6 +40,10 @@ async function main() {
             process.chdir(__dirname);
             fs.removeSync(tempDir);
             console.log(`Cleaned up temporary directory for ${repo}.`);
+            if (performOnce) {
+                console.log('Performed single migration as requested; exiting.');
+                break;
+            }
         }
     }
     console.log('\nAll migrations complete.');
