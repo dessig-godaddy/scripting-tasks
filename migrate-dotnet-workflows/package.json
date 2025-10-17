@@ -1,0 +1,17 @@
+{
+  "name": "migrate-dotnet-workflows",
+  "version": "0.1.0",
+  "description": "CLI tool to migrate .NET repository workflow files from a source workflow repository.",
+  "bin": {
+    "migrate-dotnet-workflows": "./index.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "author": "",
+  "dependencies": {
+    "fs-extra": "^11.2.0"
+  }
+}
