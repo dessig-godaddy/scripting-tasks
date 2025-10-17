@@ -9,3 +9,6 @@ A Node CLI script meant to be run from the root of a dotnet component library re
 
 ## scan-for-dotnet-jenkinsfiles
 Scans all of gdcorp-crm org -dotnet repos for the presence of a `Jenkinsfile`. Intended to be used with `migrate-dotnet-workflows`
+
+## perform-dotnet-migrations
+Uses `scan-for-dotnet-jenkinsfiles` to find remaining dotnet repos still using jenkins, and runs `migrate-dotnet-worfklows` on them. Will make branch and commits if passed `--apply`.

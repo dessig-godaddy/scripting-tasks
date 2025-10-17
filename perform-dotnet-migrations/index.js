@@ -30,6 +30,7 @@ async function main() {
             if (!dryRun) {
                 execSync(`git add .`, { stdio: 'inherit' });
                 execSync(`git commit -m "Migrate .NET workflows to GHA"`, { stdio: 'inherit' });
+                execSync(`git push --set-upstream origin migrate-workflows`, { stdio: 'inherit' });
             }
             console.log(`Migration for ${repo} completed. Please review changes and commit as needed.`);
         } catch (error) {
